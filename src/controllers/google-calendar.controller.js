@@ -74,7 +74,6 @@ const createEvent = async (req, res) => {
         console.log(eventEndTime);
         const event = {
             summary: `Meeting with David`,
-            location: `3595 California St, San Francisco, CA 94118`,
             description: `Meet with David to talk about the new client project and how to integrate the calendar for booking.`,
             colorId: 1,
             start: {
@@ -87,7 +86,6 @@ const createEvent = async (req, res) => {
             },
             attendees: [{ email: req.user.email }]
         }
-        let resource = {};
         let response = await calendar.events.insert({
             auth: oAuth2Client,
             calendarId: calendarId,

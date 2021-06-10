@@ -7,7 +7,7 @@ const { helloBuildKeyValidation, tokenVerification } = require('./../middlewares
 const routes = (app) => {
     app.use('', [helloBuildKeyValidation], authRoutes);
     app.use('/google-events', [helloBuildKeyValidation, tokenVerification], googleCalendarRoutes);
-    app.use('/repositories', [helloBuildKeyValidation, tokenVerification], repositoriesRoutes);
+    app.use('/github', [helloBuildKeyValidation, tokenVerification], repositoriesRoutes);
 
 };
 module.exports = routes;

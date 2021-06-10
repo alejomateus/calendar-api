@@ -8,7 +8,7 @@ const userValidationRules = (method) => {
       return [
         check('email', 'Email is required ').not().isEmpty(),
         check('email', 'Invalid email, this isn´t good format ').isEmail(),
-        check('password', 'The password isn´t good format ').isAlphanumeric()
+        check('password', 'The password isn´t good format ').not().isEmpty()
       ]
     }
     case 'sign-up': {
@@ -16,10 +16,8 @@ const userValidationRules = (method) => {
         check('email', 'Email is required ').not().isEmpty(),
         check('email', 'Invalid email, this isn´t good format ').isEmail(),
         check('names', 'first Name is required ').not().isEmpty(),
-        check('last_names', 'first Name is required ').not().isEmpty(),
         check('last_names', 'Lastname is required ').not().isEmpty(),
-        check('last_names', 'Invalid Lastname, should contain only letters').isAlpha(),
-        check('password', 'The password isn´t good format ').isAlphanumeric(),
+        check('password', 'The password isn´t good format ').not().isEmpty(),
       ]
     }
   }

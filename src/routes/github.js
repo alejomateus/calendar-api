@@ -1,7 +1,6 @@
 const { Router } = require('express');
-const { getRepositories } = require('../controllers/github.controller');
+const { getRepositories, getGitHubProfile } = require('../controllers/github.controller');
 const router = Router();
-// const { validate, userValidationRules } = require("../validations/validate-request");
-router.get('', getRepositories);
-
+router.get('/repositories', getRepositories);
+router.get('/profile', getGitHubProfile);
 module.exports = router;
